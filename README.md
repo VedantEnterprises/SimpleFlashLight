@@ -4,8 +4,8 @@ A simple flash light app for Android.
 It uses your camera's LED flashlight to let you see in the dark.
 
 Based on :
-[Simple Torch](https://github.com/jomo/SimpleTorch)
-[simple-led-widget](https://github.com/rahatarmanahmed/simple-led-widget)
+ [Simple Torch](https://github.com/jomo/SimpleTorch) 
+ [simple-led-widget](https://github.com/rahatarmanahmed/simple-led-widget)
 
 ##What permissions does this app need?
 * Camera
@@ -14,15 +14,16 @@ Based on :
 
 
 ## How to sign with keystore 
-To release this app with your keystore, there are 2 step involved,
- - Create androidproject.properties file. Look at [androidproject.properties]
+To release this app with your keystore, there are 2 steps involved,
+ - Create androidproject.properties file. Look at [androidproject.properties](https://github.com/joielechong/SimpleFlashLight/raw/master/androidproject.properties)
 There are 4 properties in it:
-    - 1. STORE_FILE, fill this as pointing to your android keystore file
-    - 2. STORE_PASSWORD, fill this with your keystore password
-    - 3. KEY_ALIAS, fill this with your key alias
-    - 4. KEY_PASSWORD, fill this with your alias key password
-    
- - Change AndroidProject.signing property in gradle.properties file to your androidproject.properties file.
+    - STORE_FILE, fill this as pointing to your android keystore file
+    - STORE_PASSWORD, fill this with your keystore password
+    - KEY_ALIAS, fill this with your key alias
+    - KEY_PASSWORD, fill this with your alias key password
+
+
+ - Change AndroidProject.signing property in [gradle.properties](https://github.com/joielechong/SimpleFlashLight/raw/master/gradle.properties) file to your androidproject.properties file path.
  
  NOTE: You must create androidproject.properties file and place your keystore outside this source code root to avoid accidentally commit your keystore to git.
 
