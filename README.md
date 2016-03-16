@@ -13,14 +13,28 @@ Based on :
     > Required to access the flashlight.
 
 
-
-
 ## How to sign with keystore 
-T
+To release this app with your keystore, there are 2 step involved,
+ - Create androidproject.properties file. Look at [androidproject.properties]
+There are 4 properties in it:
+    - 1. STORE_FILE, fill this as pointing to your android keystore file
+    - 2. STORE_PASSWORD, fill this with your keystore password
+    - 3. KEY_ALIAS, fill this with your key alias
+    - 4. KEY_PASSWORD, fill this with your alias key password
+    
+ - Change AndroidProject.signing property in gradle.properties file to your androidproject.properties file.
+ 
+ NOTE: You must create androidproject.properties file and place your keystore outside this source code root to avoid accidentally commit your keystore to git.
+
+ 
+## Test Device
+Tested on Sony Experia ST26i with Android 4.1.2
+
+
 Developed By
 ------------
 
-* Joielechong - <joielechong@rilixtech.com>
+* Joielechong - <joielechong@rilixtech.com>, [Rilix Technology](www.rilixtech.com)
 
 
 License

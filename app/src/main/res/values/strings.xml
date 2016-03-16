@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Simple Torch</string>
+  <string name="app_name" translatable="false">A Torch</string>
 
   <string name="about_title">About App</string>
   <string name="about_content">"Version: 1.1\nBy Juan Rio Sipayung \nwww.rilixtech.com\nUse back button to close the app!\nOr your camera will not be available!"</string>

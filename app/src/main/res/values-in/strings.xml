@@ -1,5 +1,5 @@
 <resources>
 
   <string name="about_title">Tentang Aplikasi</string>
-  <string name="about_content">"Versi: 1.1\nOleh Juan Rio Sipayung\nwww.rilixtech.com\n\nGunakan tombol back untuk menutup aplikasi!\nAtau kameramu tidak bisa dipakai selama aplikasi ini berjalan!"</string>
+  <string name="about_content">"Versi: 1.1\nOleh Juan Rio Sipayung\nwww.rilixtech.com\n\nGunakan tombol back untuk menutup aplikasi, atau kamera anda tidak bisa dipakai selama aplikasi ini berjalan."</string>
 </resources>
