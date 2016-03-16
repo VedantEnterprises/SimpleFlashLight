@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+
+  def globalConfiguration = rootProject.extensions.getByName("ext")
+
+  compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+  buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+  defaultConfig {
+    applicationId globalConfiguration.getAt("androidApplicationId")
+    minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+    targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+    versionCode globalConfiguration.getAt("androidVersionCode")
+    versionName globalConfiguration.getAt("androidVersionName")
+  }
+  buildTypes {
+    release {
+      shrinkResources true
+      debuggable false
+      zipAlignEnabled true
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  if (project.hasProperty("AndroidProject.signing") && new File(
+      project.property("AndroidProject.signing").toString()).exists()) {
+
+    def Properties props = new Properties()
+    def propFile = new File(project.property("AndroidProject.signing").toString())
+    if (propFile.canRead()) {
+      props.load(new FileInputStream(propFile))
+
+      if (props != null &&
+          props.containsKey('STORE_FILE') &&
+          props.containsKey('STORE_PASSWORD') &&
+          props.containsKey('KEY_ALIAS') &&
+          props.containsKey('KEY_PASSWORD')) {
+        android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+        android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+      } else {
+        println 'androidproject.properties found but some entries are missing'
+        android.buildTypes.release.signingConfig = null
+      }
+    } else {
+      println 'androidproject.properties file not found'
+      android.buildTypes.release.signingConfig = null
+    }
+  } else {
+    println 'AndroidProject.signing properties is not found in gradle.properties, please create in one of the following place:\n' +
+        'Under gradle user home directory defined by the GRADLE_USER_HOME environment variable, which if not set defaults to USER_HOME/.gradle\n' +
+        '2. The sub-project directory\n' +
+        '3. The root project directory'
+  }
+
+  packagingOptions {
+    exclude 'META-INF/services/javax.annotation.processing.Processor'
+    exclude '.readme'
+    exclude 'LICENSE.txt'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/dependencies.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/README.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'LICENSE'
+    exclude 'NOTICE'
+    exclude 'LICENSE.txt'
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/DEPENDENCIES.txt'
+    exclude 'META-INF/LGPL2.1'
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
+//  compile 'com.android.support:appcompat-v7:23.2.1'
+}
