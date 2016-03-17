@@ -20,8 +20,8 @@ allprojects {
 
   ext {
     androidApplicationId = 'com.rilixtech.simpleflashlight'
-    androidVersionCode = 1
-    androidVersionName = "1.1"
+    androidVersionCode = 2
+    androidVersionName = "1.2"
   }
 }
 
