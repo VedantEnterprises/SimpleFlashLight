@@ -2,6 +2,7 @@ A Torch
 =========================
 A simple flash light app for Android.
 It uses your camera's LED flashlight to let you see in the dark.
+If you don't have a flashlight with your camera, it use your screen brightness as flash light instead.
 
 Based on :
  [Simple Torch](https://github.com/jomo/SimpleTorch) 
@@ -29,7 +30,9 @@ There are 4 properties in it:
 
  
 ## Test Device
-Tested on Sony Experia ST26i with Android 4.1.2
+Tested on :
+-Sony Experia ST26i with Android 4.1.2
+-G810C Tablet with Android 4.0.4
 
 
 Developed By
