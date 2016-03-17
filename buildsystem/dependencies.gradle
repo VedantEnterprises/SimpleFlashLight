@@ -6,7 +6,7 @@ allprojects {
 
 //Controlling Android Properties of all your modules for the main project
 ext {
-  androidMinSdkVersion = 7
+  androidMinSdkVersion = 8
   androidTargetSdkVersion = 23
   androidCompileSdkVersion = 23
   androidBuildToolsVersion = "23.0.2"
