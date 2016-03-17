@@ -6,10 +6,9 @@
 /build
 /captures
 *.apk
+/gradle.properties
 
 #Linux
 *.directory
 
-# Don't show our filesystem path
-gradle.properties
 
