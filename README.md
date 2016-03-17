@@ -1,7 +1,7 @@
 A Torch
 =========================
-A simple flash light app for Android.
-It uses your camera's LED flashlight to let you see in the dark.
+A simple flash light app for Android. <br /> 
+It uses your camera's LED flashlight to let you see in the dark. <br /> 
 If you don't have a flashlight with your camera, it use your screen brightness as flash light instead.
 
 Based on :
